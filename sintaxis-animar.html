@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transformaciones de traslación y perspectiva</title>
+    <style>
+        body {
+            display: flex;            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            font-family: arial;
+        }
+        .container {
+            border: solid 1px red;
+            width: 100%;
+        }
+        .container:hover .cuadrado {
+            /* animation-play-state: paused; */
+        }
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;    
+            animation-name: cuadrado;     
+            animation-duration: 2s;  
+            animation-delay: 1s;
+            /* animation-iteration-count: 2; */
+            /* animation-iteration-count: infinite; */
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes cuadrado {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">         
+        <div class="cuadrado">
+
+        </div>
+    </div>
+</body>
+</html>
