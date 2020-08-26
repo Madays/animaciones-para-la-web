@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transformaciones de traslación y perspectiva</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: arial;
+            perspective: 200px;
+            perspective-origin: center;
+        }
+        .container {
+            border: solid 1px red;
+        }
+        .container:hover .cuadrado {
+            transform: scale(2);
+        }
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;    
+            transition: .3s;        
+        }
+    </style>
+</head>
+<body>
+    <div class="container">         
+        <div class="cuadrado">
+
+        </div>
+    </div>
+</body>
+</html>
