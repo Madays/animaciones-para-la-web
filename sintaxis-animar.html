@@ -18,6 +18,7 @@
             width: 100%;
             height: 240px;
             position: relative;
+            background-color: black;
         }
         .container:hover .cuadrado {
             animation-play-state: paused;
@@ -32,9 +33,14 @@
             animation-name: cuadrado;     
             animation-duration: 2s;  
             /* animation-delay: 1s; */
-            animation-iteration-count: 1;
-            /* animation-iteration-count: infinite; */
-            animation-timing-function: ease;
+            /* animation-iteration-count: 4; */
+            animation-iteration-count: infinite;
+            /* animation-timing-function: ease; */
+            /* animation-timing-function: ease-in; */
+            /* animation-timing-function: ease-out; */
+            /* animation-timing-function: ease-in-out; */
+            /* animation-timing-function: linear; */
+            animation-timing-function: steps(45);
             animation-direction: alternate;
             /* animation-fill-mode: forwards; */
         }
