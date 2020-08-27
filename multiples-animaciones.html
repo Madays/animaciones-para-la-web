@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiples animaciones</title>
+    <style>
+        body {
+            display: flex;            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            font-family: arial;
+        }
+        .container {
+            border: solid 1px red;
+            width: 100%;
+            height: 240px;
+            position: relative;
+            background-color: black;
+        }
+        .container:hover .cuadrado {
+            animation-play-state: paused;
+        }
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            border-radius: 50%;
+            margin: 20px;    
+            position: absolute;
+            animation-name: cuadrado, rebote;     
+            animation-duration:2s, .6s;  
+            animation-iteration-count: infinite;
+            /* animation-timing-function: ease; */
+            animation-timing-function: linear, ease-in-out;
+            animation-direction: alternate;
+        }
+
+        @keyframes cuadrado {
+            0% {
+                /* opacity: 1; */
+                left: 0;
+            }
+            100% {
+                /* opacity: 0; */
+                left: calc(100% - 220px);
+            }
+        }
+
+        @keyframes rebote {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(100px) scale(1, .8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">         
+        <div class="cuadrado">
+
+        </div>
+    </div>
+</body>
+</html>
