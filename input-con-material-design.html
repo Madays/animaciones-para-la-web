@@ -5,22 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Múltiples animaciones</title>
     <style>
-        body {
-            /* display: flex;            
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-            font-family: arial; */
+        .container {
+            padding: 3rem;
         }
-        
         .elem-input {
             position: relative;
-        }
-        label {
-            position: absolute;
-            bottom: 0;
-            transition: position .3s ease 1s;
+            display: flex;
+            flex-direction: column;
         }
 
         input {
@@ -28,17 +19,39 @@
             border-bottom: solid 1px #ccc;
         }
 
-        .elem-input:hover label {
-            position: relative;
-        }
+        label {
+            position: absolute;
+            transition: position .3s ease 1s;
+        }        
+
+        .labelUp {
+            top: -20px;
+        } 
     </style>
 </head>
 <body>
-    <div class="">         
-        <div class="elem-input">
-            <label for="test">Username</label> <br>
-            <input type="text" id="test">
+    <div class="container">         
+        <div class="elem-input">                         
+            <label for="test">Username</label>
+            <input type="text" id="test"> 
         </div>
     </div>
+
+    <script>
+        const elemInput = document.querySelectorAll(".elem-input")[0];
+        const label = elemInput.querySelector("label");
+        const input = elemInput.querySelector("input");
+        
+        elemInput.addEventListener("mouseover", labelUp);
+        elemInput.addEventListener("mouseout", labelDown);
+        input.addEventListener("change", labelUp);
+        function labelUp() {
+            label.classList.add("labelUp");
+        }
+        function labelDown() {
+            label.classList.remove("labelUp");
+        }
+
+    </script>
 </body>
 </html>
