@@ -12,6 +12,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            height: 50px;
         }
 
         input {
@@ -30,27 +31,38 @@
     </style>
 </head>
 <body>
-    <div class="container">         
-        <div class="elem-input">                         
-            <label for="test">Username</label>
-            <input type="text" id="test"> 
-        </div>
+    <div class="container">   
+        <form action="">     
+            <div class="elem-input">                         
+                <label for="username">Username</label>
+                <input type="text" id="username"> 
+            </div>
+            <div class="elem-input">                         
+                <label for="lastname">Lastname</label>
+                <input type="text" id="lastname"> 
+            </div>
+        </form> 
     </div>
 
     <script>
-        const elemInput = document.querySelectorAll(".elem-input")[0];
-        const label = elemInput.querySelector("label");
-        const input = elemInput.querySelector("input");
-        
-        elemInput.addEventListener("mouseover", labelUp);
-        elemInput.addEventListener("mouseout", labelDown);
-        input.addEventListener("change", labelUp);
-        function labelUp() {
-            label.classList.add("labelUp");
-        }
-        function labelDown() {
-            label.classList.remove("labelUp");
-        }
+        document.onclick = function(event) {
+            event = event || window.event; // IE specials
+            var target = event.target || event.srcElement; // IE specials
+
+            const form = document.querySelector("form");
+            if(target.nodeName !== "INPUT") {                
+                for(let i=0; i<form.length; i++){
+                    console.log(target);
+                    if(form.elements[i].value == "") {
+                        form.elements[i].previousElementSibling.classList.remove("labelUp");
+                    }
+                }
+            }
+
+            if((target.nodeName == "INPUT") && (target.value == "")) {
+                target.previousElementSibling.classList.add("labelUp");
+            }
+        };
 
     </script>
 </body>
