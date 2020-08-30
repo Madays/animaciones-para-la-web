@@ -1,0 +1,66 @@
+<!--Form invite users-->
+<form name="frm-invite-users" method="post" action="/user/invite-users.php">                        
+    <table class="nkn-table nkn-vertical" id="table-users">
+        <caption class="nkn-clear">                 
+            <h1 class="nkn-text-center">Invite Member</h1>
+            <span class="nkn-multi-button nkn-right">
+                <button type="button" class="cc-add-to-collection" title="New" onclick="insertRow()">
+                    <svg class="cc-icon">
+                        <use xlink:href="/coolcalc/local-assets/sprites/restui.svg#add-to-collection"></use>
+                    </svg>
+                </button>                
+            </span>                                      
+        </caption>   
+        <thead>
+            <tr>
+                <th>Nr.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Is Admin?</th>
+                <th>MJ8 Report Credits?</th>
+                <th style="width: 60px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-title = "Nr User">1</td>
+                <td data-title = "First Name">
+                    <input type="text" name="first_name[]" class="nkn-input" required>
+                </td>
+                <td data-title = "Last Name">
+                    <input type="text" name="last_name[]" class="nkn-input" required>
+                </td>
+                <td data-title = "Email">
+                    <input type="email" name="email[]" class="nkn-input" required>
+                </td>
+                <td data-title = "Is Admin?">
+                    <input type="checkbox" name="access_levels[0][]" value="admin">
+                </td>
+                <td data-title = "MJ8 Report Credits?">
+                    <input type="checkbox" name="access_levels[0][]" value="reports">
+                </td>
+                <td data-title = "Delete">
+                    <button type="button" id="delete-users" title="Delete" onclick="deleteRow(this)">
+                        <svg class="cc-icon">
+                            <use xlink:href="/coolcalc/local-assets/sprites/restui.svg#trash"></use>
+                        </svg>
+                    </button>                                                 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="nkn-alert nkn-informative">
+        <p>
+            <svg class="nkn-icon">                
+                <use xlink:href="/coolcalc/local-assets/sprites/restui.svg#informative"></use>
+            </svg>
+            Querido usuario al hacer click en "invite user" se enviara un correo electronico a los ivitados para que sean parte de este equipo.
+        </p>
+    </div>
+    <div class="nkn-row-padding">
+        <div class="nkn-col-s12">
+            <button type="submit" name="submit" value="inviteUsers" class="nkn-button" title="Invite Users">Invite Users</button>
+        </div>
+    </div>                       
+</form>

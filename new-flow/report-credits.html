@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/unkuna/css/unkuna.css">
+        <link rel="stylesheet" href="/unkuna/themes/coolcalc.css">
+        <link rel="stylesheet" href="/css/coolcalc.css">
+        <title>{{page_title}}</title>
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        {{user-menu}}
+        <div class="nice-page-doble">
+            <div class="nkn-container">
+                <!--- Main page content. -->
+
+                <div class="nkn-row">
+                    <div class="nkn-col-s12 nkn-col-m4 nkn-offset-m4">
+                        <div class="nkn-message nkn-success">
+                            {{mySuccessMessage}}
+                        </div>
+                        <div class="nkn-message nkn-info">
+                            {{myInfoMessage}}
+                        </div>
+                        <div class="nkn-message nkn-error">
+                            {{myErrors}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nkn-row">
+                    <div class="nkn-col-s12 nkn-col-m4">
+                        <div class="nkn-margin nkn-border pack">
+                            <h2>Personal Pack</h2>
+                            <p>$15.00</p>
+                            <ul>
+                                <li>5 Reports approved by ACCA</li>
+                            </ul>
+                            <form id="frm_personal" name="frm_personal" method="post" action="/user/report-credits.php">
+                                <input id="txt_pack" type="hidden" name="txt_pack">
+                                <input id="txt_token" type="hidden" name="txt_token">
+                            </form>
+                            <button class="nkn-button button-pack" id="customButtonPersonal">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="nkn-col-s12 nkn-col-m4">
+                        <div class="nkn-margin nkn-border pack">
+                            <h2>Team Pack</h2>
+                            <p>$80.00</p>
+                            <ul>
+                                <li>30 Reports approved by ACCA</li>
+                            </ul>
+                            <button class="nkn-button button-pack" id="customButtonTeam">Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="nkn-col-s12 nkn-col-m4">
+                        <div class="nkn-margin nkn-border pack">
+                            <h2>Enterprise Pack</h2>
+                            <p>$250.00</p>
+                            <ul>
+                                <li>100 Reports approved by ACCA</li>
+                            </ul>
+                            <button class="nkn-button button-pack" id="customButtonEnterprise">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nkn-row">
+                    <div class="nkn-col-m4 nkn-offset-m4">
+                        <div class="nkn-margin nkn-border">
+                            <p style="text-align: center; font-size: 20px">Available Reports: {{available_reports}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nkn-row">
+                    <div class="nkn-col-m4 nkn-offset-m4">
+                        <div class="nkn-margin nkn-border pack">
+                            <h2>Gift Card</h2>
+                            <p>I have a Code</p>
+                            <form id="frm_redeem" name="frm_redeem" method="post" action="/user/report-credits.php">
+                                <div class="nkn-input-group">
+                                    <input class="nkn-input" type="text" id="txt_code" name="txt_code" placeholder="Code..." required>
+                                </div>
+                                <br>
+                                <button class="nkn-button" id="redeemButton" type="submit">Redeem</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{footer}}
+        <!--- Local JavaScript. -->
+        <script type="text/javascript" src="/javascript/v0.2/coolcalc-ui.js"></script>
+        <!-- Stripe -->
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+        <script>
+            var frmPersonal = document.getElementById('frm_personal');
+            var txtPack = document.getElementById('txt_pack');
+            var txtToken = document.getElementById('txt_token');
+            var handler = StripeCheckout.configure({
+                key: "{{stripe_publishable_key}}",
+                image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+                locale: 'auto',
+                email: "{{email}}",
+                token: function(token) {
+                    txtToken.value = token.id;
+                    frmPersonal.submit();
+                    // You can access the token ID with `token.id`.
+                    // Get the token ID to your server-side code for use.
+                }
+            });
+
+            document.getElementById('customButtonPersonal').addEventListener('click', function(e) {
+                // Open Checkout with further options:
+                handler.open({
+                    name: 'CoolCalc',
+                    description: '5 reports',
+                    amount: 1500
+                });
+                txtPack.value = "personal";
+                e.preventDefault();
+            });
+
+            document.getElementById('customButtonTeam').addEventListener('click', function(e) {
+                // Open Checkout with further options:
+                handler.open({
+                    name: 'CoolCalc',
+                    description: '30 reports',
+                    amount: 8000
+                });
+                txtPack.value = "team";
+                e.preventDefault();
+            });
+
+            document.getElementById('customButtonEnterprise').addEventListener('click', function(e) {
+                // Open Checkout with further options:
+                handler.open({
+                    name: 'CoolCalc',
+                    description: '100 reports',
+                    amount: 25000
+                });
+                txtPack.value = "enterprise";
+                e.preventDefault();
+            });
+
+
+            // Close Checkout on page navigation:
+            window.addEventListener('popstate', function() {
+                handler.close();
+            });
+
+
+
+        </script>
+
+        <!--- Unkuna JavaScript. -->
+        <script src="/unkuna/js/unkuna.js"></script>
+
+    </body>
+</html>

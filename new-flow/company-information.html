@@ -1,0 +1,45 @@
+<!--Company information form-->
+<form name="frm-company" method="post" action="/user/new-company.php" class="nkn-form">
+	<h1 class="nkn-text-center title-form">Company Information</h1>
+	<div class="nkn-row-padding">
+	    <div class="nkn-col-s12">
+		<label for="company_name" class="nkn-label">Company Name</label>
+		<input type="text" name="company_name" value="{{company_name}}" id="company_name" class="nkn-input" required>
+	    </div>
+	</div>
+	<div class="nkn-row-padding">
+	    <div class="nkn-col-s12">
+		<label for="country" class="nkn-label">Country</label>
+		<select class="nkn-select" name="country" id="country" required>
+		    <option value="" selected disabled>Select Country</option>
+		    {{country}}
+		</select>
+	    </div>
+	</div>
+	<div class="nkn-row-padding">
+	    <div class="nkn-col-s12">
+		<label for="state" class="nkn-label">State or Province</label>
+		<select class="nkn-select" name="state" id="state" required>
+		    <option value="" selected disabled>Select State</option>
+		    {{state}}
+		</select>
+	    </div>
+	</div>
+	<div class="nkn-row-padding">
+	    <div class="nkn-col-s12">
+		<label for="city" class="nkn-label">City</label>
+		<input type="text" name="city" value="{{city}}" id="city" class="nkn-input" required>
+	    </div>
+	</div>
+	<div class="nkn-row-padding">
+	    <div class="nkn-col-s12">
+		<label for="address" class="nkn-label">Address</label>
+		<input type="text" name="address" value="{{address}}" id="address" class="nkn-input" required>
+	    </div>
+	</div>		
+	<div class="nkn-row-padding">
+	    <div class="nkn-col-s12">
+			<button type="submit" name="" value="" class="nkn-button" title="Next">Next</button>
+	    </div>
+	</div>
+</form>

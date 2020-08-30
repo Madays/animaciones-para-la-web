@@ -1,0 +1,44 @@
+<h1 class="cc-title cc-title-form cc-color-1 nkn-text-center">Register In Coolcalc</h1>
+<section class="">
+    <div class="cc-msg-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill=#8bd5f5 d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M13,17h-2v-6h2V17z M13,9h-2V7h2V9z"/></svg>
+        <span class="cc-title cc-color-2">IMPORTANT</span>
+    </div>
+    <p class="cc-msg-content">Choosing the most relevant account type allows us to customize the onboarding process to your needs. All accounts have access to the same Manual J features.</p>
+</section> 
+<form name="frm-info" method="post" action="/user/new-account.php" class="">
+    <section class="cc-info-user">
+        <div class="nkn-row-padding">
+            <div class="nkn-col-s12">
+                <label class="nkn-label">Choose your account type</label>
+                <div class="nkn-input-radio">
+                    <input type="radio" name="account-type" value="HVAC-contractor"  id="HVAC-contractor"> 
+                    <label for="HVAC-contractor" class="nkn-label">HVAC contractor</label>
+                </div>
+                <div class="nkn-input-radio">
+                    <input type="radio" name="account-type" value="engineer-or-architect" id="engineer-or-architect"> 
+                    <label for="engineer-or-architect" class="nkn-label">Engineer or architect</label>
+                </div>
+                <div class="nkn-input-radio">
+                    <input type="radio" name="account-type" value="home-owner" id="home-owner"> 
+                    <label for="home-owner" class="nkn-label">Home owner</label>
+                </div>
+                <div class="nkn-input-radio">
+                    <input type="radio" name="account-type" value="student" id="student"> 
+                    <label for="student" class="nkn-label">Student</label>
+                </div>
+                <div class="nkn-input-radio">
+                    <input type="radio" name="account-type" value="other" id="other"> 
+                    <label for="other" class="nkn-label">Other</label>
+                </div>
+            </div>
+        </div>
+    </section>						                       									
+    <div class="nkn-row-padding">
+        <div class="nkn-col-s12 nkn-center">
+            <button type="submit" name="submit" value="" class="cc-button cc-btn" title="Next">Next</button>
+        </div>
+    </div>
+</form>  
+<p>Do you already have an account? <span class="cc-color-1">Log in</span></p>
+<p>By registering with us you <a href="../privacy.php" class="cc-color-1">Accept the Privacy Policy</a> and <a href="../terms.php" class="cc-color-1">Terms of Use</a> </p>

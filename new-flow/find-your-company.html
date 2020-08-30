@@ -1,0 +1,36 @@
+<!--User information form-->
+<form name="" method="post" action="" class="nkn-form">
+    <h1 class="nkn-text-center">Find Your Company</h1>                            
+    <div class="nkn-row-padding">
+        <div class="nkn-col-s12">
+            <label for="country" class="nkn-label">Country</label>
+            <input type="text" name="" value="" id="country" class="nkn-input" required>
+        </div>
+    </div>                    
+    <div class="nkn-row-padding">
+        <div class="nkn-col-s12">
+            <label for="state" class="nkn-label">State or Province</label>
+            <select class="nkn-select" name="state" id="state" required>
+                <option value="" selected disabled>Select State</option>
+                {{state}}
+            </select>
+        </div>
+    </div>
+	<div class="nkn-row-padding">
+        <div class="nkn-col-s12">
+            <label for="what_is_company_name" class="nkn-label">Company Name</label>
+            <input type="search" name="what_is_company_name" value="" id="what_is_company_name" class="nkn-input" required>
+            <i>
+                <svg class="cc-icon">
+                    <use xlink:href="/coolcalc/local-assets/sprites/restui.svg#search"></use>
+                </svg>
+            </i>
+        </div>
+    </div> 
+    <div class="nkn-row-padding">
+        <div class="nkn-col-s12">
+            <button type="submit" name="" value="" class="nkn-button" title="Next">Next</button>
+        </div>
+    </div>                     
+</form>
+

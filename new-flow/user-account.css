@@ -1,0 +1,127 @@
+/*Variables for coolcalc*/
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	color: rgba(127,127,127,1);
+}
+
+.cc-color-1 {
+    color: var(--primary-color);
+}
+
+.cc-color-2 {
+	color: rgba(127,127,127,1);	
+}
+
+/*overwrite unkuna framework*/
+.nkn-container {
+	padding-top: 6rem;
+}
+
+.nkn-label {
+	color: var(--gray-3);/*#545454;*/
+	font-size: 1.1rem;
+}
+
+/*end overwrite unkuna framework*/
+.cc-card {
+	box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.161);
+	border-radius: 16px;
+}
+
+.cc-ua-container {
+	width: 600px;
+	margin: auto;
+	text-align: center;
+	padding: 1rem 4rem;
+}
+
+.cc-title {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;	
+	text-transform: uppercase;
+}
+
+.cc-title-form {
+	border-bottom: 1px solid var(--gray-4);
+	padding-bottom: 1rem;
+	color: var(--primary-color);
+	font-weight: 600;
+}
+
+.cc-msg-title {
+	display: flex;
+	align-items: center;
+}
+
+.cc-msg-title .cc-title {
+	font-size: 1.25rem;
+}
+.cc-msg-content {
+	margin: 0 0 1rem 0;
+	text-align: justify;
+	color: rgba(127,127,127,1);
+	font-size: 1rem;
+}
+
+.cc-info-user {
+	margin: 1.5rem 0;
+	text-align: left;
+}
+
+.cc-button {
+	width: 472px;
+	height: 52px;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;	
+	text-transform: uppercase;
+	background-color: var(--accent-color);
+	color: var(--secondary-text-color);
+	border: none;
+	border-radius: 100px;
+}
+
+/*Material design*/
+.cc-elem-input {
+	display: flex;
+	align-items: flex-end;
+}
+
+.cc-elem-input svg {
+	margin-bottom: .5rem;
+	fill: var(--gray-3);
+}
+.cc-label-input-box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 80px;
+	justify-content: flex-end;
+	margin-left: 1rem;
+	width: 100%;
+}
+
+.nkn-input {
+	border: none;
+	/* border-bottom: solid 1px #ccc; */
+	border-bottom: solid 1px var(--gray-4);
+	padding: 0;
+}
+
+.nkn-input.cc-click-efect {
+	border-bottom: solid 1px var(--gray-2);
+}
+
+label {
+	position: absolute;
+	transition: position .3s ease 1s;
+}        
+
+.labelUp {
+	top: 23px;
+} 
+
+
+
